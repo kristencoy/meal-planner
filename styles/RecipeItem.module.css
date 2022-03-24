@@ -1,0 +1,25 @@
+.card {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 3px solid #0564f186;
+  border-radius: 10px;
+  height: 15rem;
+  width: 15rem;
+}
+
+.card:hover {
+  color: #0563f1;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
