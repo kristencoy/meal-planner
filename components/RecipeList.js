@@ -1,4 +1,3 @@
-import RecipeData from "../data/RecipeData";
 import RecipeItem from "./RecipeItem";
 import styles from "../styles/RecipeItem.module.css";
 
@@ -16,14 +15,21 @@ import styles from "../styles/RecipeItem.module.css";
 
 // export default RecipeList;
 
-export default function RecipeList() {
-  console.log(RecipeData);
+export default function RecipeList(props) {
+  //gather list of available recipes to hold in state
+  // const [loadedRecipes, setLoadedRecipes] = useState([]);
+  // //fetch data when component first mounts/is rendered
+  // useEffect(() => {
+  //   //fetch http request
+  //   setLoadedRecipes(RecipeData);
+  // }, []);
+
   return (
     <ul className={styles.items}>
-      {RecipeData.map((recipe) => (
+      {props.recipes.map((recipe) => (
         <RecipeItem
-          key={recipe.id}
-          id={recipe.id}
+          key={recipe._id}
+          id={recipe._id}
           title={recipe.title}
           ingredients={recipe.ingredients}
           instructions={recipe.instructions}
