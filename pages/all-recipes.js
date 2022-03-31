@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Recipes.module.css";
 import RecipeList from "../components/RecipeList";
-import { MongoClient } from "mongodb";
+import { connectToDatabase } from "../lib/mongodb";
 
 function LinkAnchor({ href, children }) {
   return (
@@ -16,8 +16,8 @@ export default function Recipes(props) {
     <div className={styles.main}>
       <span>
         <h1 className={styles.title}>Recipes</h1>
-        <LinkAnchor href="/">View All</LinkAnchor>
-        <LinkAnchor href="/">View Favorites</LinkAnchor>
+        <LinkAnchor href="/">Home</LinkAnchor>
+        <LinkAnchor href="/random">View 5 Day Random</LinkAnchor>
         <LinkAnchor href="/add-new-recipe">Add New Recipe</LinkAnchor>
       </span>
       <div className={styles.recipeList}>
@@ -29,18 +29,23 @@ export default function Recipes(props) {
 }
 
 export async function getStaticProps() {
-  //get data associated with id
-  // const uri =
-  //   "mongodb+srv://kristen:DB@dmin45@cluster0.9ifqp.mongodb.net/meal-planner?retryWrites=true&w=majority";
-  const client = await MongoClient.connect(
-    "mongodb+srv://kristen:DB%40dmin45@cluster0.9ifqp.mongodb.net/meal-planner?retryWrites=true&w=majority"
-  );
-  const db = client.db("meal-planner");
-  const recipeCollection = db.collection("recipes");
-  let recipeData = await recipeCollection.find().toArray();
-  recipeData = JSON.parse(JSON.stringify(recipeData));
+  // //get data associated with id
+  // // const uri =
+  // //   "mongodb+srv://kristen:DB@dmin45@cluster0.9ifqp.mongodb.net/meal-planner?retryWrites=true&w=majority";
+  // const client = await MongoClient.connect(
+  //   "mongodb+srv://kristen:DB%40dmin45@cluster0.9ifqp.mongodb.net/meal-planner?retryWrites=true&w=majority"
+  // );
+  // const db = client.db("meal-planner");
+  // const recipeCollection = db.collection("recipes");
+  // let recipeData = await recipeCollection.find().toArray();
+  // recipeData = JSON.parse(JSON.stringify(recipeData));
 
-  client.close();
+  // client.close();
+
+  const { db } = await connectToDatabase();
+  let recipeData = await db.collection("recipes").find({}).toArray();
+  recipeData = JSON.parse(JSON.stringify(recipeData));
+  console.log(recipeData);
 
   return {
     props: { recipeData },

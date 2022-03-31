@@ -1,8 +1,11 @@
 import Link from "next/link";
 import NewRecipeForm from "../components/NewRecipeForm";
 import styles from "../styles/NewRecipe.module.css";
+import { useRouter } from "next/router";
 
 function NewRecipePage() {
+  const router = useRouter();
+
   async function addRecipeHandler(recipeData) {
     const response = await fetch("/api/new-recipe", {
       method: "POST",
@@ -13,6 +16,8 @@ function NewRecipePage() {
     });
 
     const data = await response.json();
+
+    router.push("/all-recipes");
   }
 
   return (

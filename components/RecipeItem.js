@@ -6,9 +6,9 @@ export default function RecipeItem(props) {
   return (
     <div>
       <li className={styles.card}>
-        <div className={styles.star}>
-          <FavoriteStar />
-        </div>
+        {/* <div className={styles.star}> */}
+        {/* <FavoriteStar /> */}
+        {/* </div> */}
         <Link href={`/recipes/${props.id}`}>
           <a className={styles.a}>{props.title}</a>
         </Link>

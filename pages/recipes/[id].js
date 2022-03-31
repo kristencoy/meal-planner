@@ -1,7 +1,8 @@
 import RecipeDetail from "../../components/RecipeDetail";
 import Navbar from "../../components/Navbar";
 import styles from "../../styles/RecipeDetail.module.css";
-import { MongoClient, ObjectId } from "mongodb";
+import { ObjectId } from "mongodb";
+import { connectToDatabase } from "../../lib/mongodb";
 import Link from "next/link";
 
 export default function RecipePage(props) {
@@ -22,10 +23,7 @@ export default function RecipePage(props) {
 
 export async function getStaticPaths() {
   //return possible ids
-  const client = await MongoClient.connect(
-    "mongodb+srv://kristen:DB%40dmin45@cluster0.9ifqp.mongodb.net/meal-planner?retryWrites=true&w=majority"
-  );
-  const db = client.db("meal-planner");
+  const { db } = connectToDatabase();
   const recipeCollection = db.collection("recipes");
   let data = await recipeCollection.find().toArray();
   data = JSON.parse(JSON.stringify(data));
@@ -50,10 +48,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   //get data associated with id
   const recipeId = context.params.id;
-  const client = await MongoClient.connect(
-    "mongodb+srv://kristen:DB%40dmin45@cluster0.9ifqp.mongodb.net/meal-planner?retryWrites=true&w=majority"
-  );
-  const db = client.db("meal-planner");
+  const { db } = connectToDatabase();
   const recipeCollection = db.collection("recipes");
   const selectedRecipe = await recipeCollection.findOne({
     _id: ObjectId(recipeId),
