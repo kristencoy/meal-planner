@@ -6,12 +6,13 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-decoration: none;
   border: 3px solid #0564f186;
   border-radius: 10px;
-  height: 15rem;
-  width: 15rem;
+  height: 12rem;
+  width: 12rem;
+  font-weight: 500;
 }
 
 .card:hover {
@@ -26,12 +27,46 @@
 }
 
 .a {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 380;
 }
 
 .star {
   position: relative;
   top: 10px;
   left: 30%;
+}
+
+.title {
+  margin-left: 3rem;
+}
+
+.dayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dayContainer h2 {
+  margin-top: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }

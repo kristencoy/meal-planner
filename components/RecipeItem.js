@@ -30,7 +30,7 @@ export default function RecipeItem(props) {
 
 // todo: add ability to favorite - click star, add fav class
 
-// todo: add ability to shuffle - Math.random to grab index of array of objects/recipes
+//√ todo: add ability to shuffle - Math.random to grab index of array of objects/recipes
 
 //√ todo: add db of recipes - mongo vs. firebase
 

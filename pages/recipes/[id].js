@@ -14,16 +14,18 @@ export default function RecipePage(props) {
         ingredients={props.recipeData.ingredients}
         instructions={props.recipeData.instructions}
       />
-      <Link href="/all-recipes">
-        <a className={styles.a}>&larr; Back to All Recipes</a>
-      </Link>
+      <div className={styles.container}>
+        <Link href="/all-recipes">
+          <a className={styles.a}>&larr; Back to All Recipes</a>
+        </Link>
+      </div>
     </>
   );
 }
 
 export async function getStaticPaths() {
   //return possible ids
-  const { db } = connectToDatabase();
+  const { db } = await connectToDatabase();
   const recipeCollection = db.collection("recipes");
   let data = await recipeCollection.find().toArray();
   data = JSON.parse(JSON.stringify(data));
@@ -32,8 +34,6 @@ export async function getStaticPaths() {
       params: { id: recipe._id.toString() },
     };
   });
-
-  client.close();
 
   return {
     paths,
@@ -48,13 +48,11 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   //get data associated with id
   const recipeId = context.params.id;
-  const { db } = connectToDatabase();
+  const { db } = await connectToDatabase();
   const recipeCollection = db.collection("recipes");
   const selectedRecipe = await recipeCollection.findOne({
     _id: ObjectId(recipeId),
   });
-
-  client.close();
 
   return {
     props: {

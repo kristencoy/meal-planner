@@ -45,8 +45,10 @@ export default function NewRecipeForm(props) {
           </label>
           <textarea id="instructions" ref={instructionsInputRef} />
         </div>
-        <div>
-          <button type="submit">Add Recipe</button>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button} type="submit">
+            Add Recipe
+          </button>
         </div>
       </form>
     </div>

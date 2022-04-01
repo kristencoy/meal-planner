@@ -47,7 +47,7 @@
   line-height: 1.15;
   font-size: 4rem;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 0rem;
   max-width: 80vw;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -98,11 +98,6 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
 }
 
 @media (max-width: 600px) {

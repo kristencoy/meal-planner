@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "../styles/Recipes.module.css";
 import RecipeList from "../components/RecipeList";
 import { connectToDatabase } from "../lib/mongodb";
+import Navbar from "../components/Navbar";
 
 function LinkAnchor({ href, children }) {
   return (
@@ -13,18 +14,24 @@ function LinkAnchor({ href, children }) {
 
 export default function Recipes(props) {
   return (
-    <div className={styles.main}>
-      <span>
-        <h1 className={styles.title}>Recipes</h1>
-        <LinkAnchor href="/">Home</LinkAnchor>
-        <LinkAnchor href="/random">View 5 Day Random</LinkAnchor>
-        <LinkAnchor href="/add-new-recipe">Add New Recipe</LinkAnchor>
-      </span>
-      <div className={styles.recipeList}>
-        <RecipeList recipes={props.recipeData} />
+    <>
+      <Navbar />
+      <div className={styles.main}>
+        <span>
+          <h1 className={styles.title}>All Recipes</h1>
+          <LinkAnchor href="/random" className={styles.altTitle}>
+            Roll the Dice
+          </LinkAnchor>
+          {/* <LinkAnchor href="/">Home</LinkAnchor>
+          <LinkAnchor href="/random">View 5 Day Planner</LinkAnchor>
+          <LinkAnchor href="/add-new-recipe">Add New Recipe</LinkAnchor> */}
+        </span>
+        <div className={styles.recipeList}>
+          <RecipeList recipes={props.recipeData} />
+        </div>
+        {/* <LinkAnchor href="/">&larr; Return Home</LinkAnchor> */}
       </div>
-      <LinkAnchor href="/">&larr; Return Home</LinkAnchor>
-    </div>
+    </>
   );
 }
 

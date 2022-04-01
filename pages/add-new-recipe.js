@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 import NewRecipeForm from "../components/NewRecipeForm";
 import styles from "../styles/NewRecipe.module.css";
 import { useRouter } from "next/router";
@@ -21,14 +22,19 @@ function NewRecipePage() {
   }
 
   return (
-    <div className={styles.card}>
-      <h1>Add A New Recipe</h1>
-      <p>5-6 ingredients, simple instructions</p>
-      <NewRecipeForm onAddRecipe={addRecipeHandler} />
-      <Link href="/">
-        <a className={styles.a}>&larr; Return Home</a>
-      </Link>
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.pageContainer}>
+        <div className={styles.card}>
+          <h1>Add A New Recipe</h1>
+          <p>5-6 ingredients, simple instructions</p>
+          <NewRecipeForm onAddRecipe={addRecipeHandler} />
+          <Link href="/">
+            <a className={styles.a}>&larr; Return Home</a>
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
 

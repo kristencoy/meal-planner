@@ -1,6 +1,14 @@
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .form {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
 .container {
@@ -11,14 +19,25 @@
 .item {
   width: 100%;
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.item input textarea {
+  width: 10rem;
+  font-size: 1.2rem;
+}
+
+.item textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .formLabel {
   margin-right: 2rem;
+  font-size: 1rem;
 }
 
 .a {
-  margin-left: 2rem;
   font-size: 1.2rem;
   padding: 1rem;
 }
@@ -38,5 +57,17 @@
   text-decoration: none;
   border: 3px solid #0564f186;
   border-radius: 10px;
-  max-width: 80%;
+  width: 60%;
+}
+
+.button {
+  align-items: center;
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -20,6 +20,10 @@ export default function Home() {
       </div>
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to a new way to plan meals</h1>
+        <p className={styles.description}>
+          Born of the daily struggle to come up with what to eat and what to buy
+          at the grocery store
+        </p>
         <div className={styles.grid}>
           <Link href="/all-recipes">
             <a className={styles.card}>

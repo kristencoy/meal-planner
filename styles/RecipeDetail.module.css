@@ -1,13 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
   margin: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
   border: 3px solid #0564f186;
   border-radius: 10px;
   height: auto;
   width: 50rem;
+}
+
+.a {
+  display: inline-block;
+  align-items: center;
 }
