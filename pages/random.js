@@ -18,7 +18,9 @@ export default function RandomPage(props) {
     <>
       <Navbar />
       <div className={styles.randContent}>
-        <h1 className={styles.title}>5 Day Meal Planner</h1>
+        <div className={styles.titleContainer}>
+          <h1 className={styles.title}>5 Day Meal Planner</h1>
+        </div>
         <div className={styles.container}>
           <div className={styles.grid}>
             {/* {props.randRecipes.map((recipe) => (

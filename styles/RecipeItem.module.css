@@ -39,6 +39,16 @@
 
 .title {
   margin-left: 3rem;
+  display: inline;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: left;
+  margin-bottom: 4rem;
+  padding-left: 4rem;
+  max-width: 900px;
 }
 
 .dayContainer {
@@ -65,13 +75,10 @@
 }
 
 @media (max-width: 768px) {
-  .grid {
+  .randContent {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-
-  .randContent {
     padding-top: 5rem;
   }
 }

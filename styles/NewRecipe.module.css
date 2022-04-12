@@ -66,6 +66,10 @@
   padding: 0.5rem;
 }
 
+.button:active {
+  transform: translateY(2px);
+}
+
 .buttonContainer {
   display: flex;
   align-items: center;

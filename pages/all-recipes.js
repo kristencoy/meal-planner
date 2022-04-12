@@ -20,7 +20,7 @@ export default function Recipes(props) {
         <div className={styles.headText}>
           <h1 className={styles.title}>All Recipes</h1>
           <LinkAnchor href="/random" className={styles.altTitle}>
-            Roll the Dice
+            5 Days of Random Recipes
           </LinkAnchor>
           {/* <LinkAnchor href="/">Home</LinkAnchor>
           <LinkAnchor href="/random">View 5 Day Planner</LinkAnchor> */}
