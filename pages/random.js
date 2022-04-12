@@ -17,10 +17,11 @@ export default function RandomPage(props) {
   return (
     <>
       <Navbar />
-      <h1 className={styles.title}>5 Day Meal Planner</h1>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          {/* {props.randRecipes.map((recipe) => (
+      <div className={styles.randContent}>
+        <h1 className={styles.title}>5 Day Meal Planner</h1>
+        <div className={styles.container}>
+          <div className={styles.grid}>
+            {/* {props.randRecipes.map((recipe) => (
           <RecipeItem
             key={recipe._id}
             id={recipe._id}
@@ -29,25 +30,26 @@ export default function RandomPage(props) {
             instructions={recipe.instructions}
           />
         ))} */}
-          <div className={styles.dayContainer}>
-            {days[0]}
-            <h2>Monday</h2>
-          </div>
-          <div className={styles.dayContainer}>
-            {days[1]}
-            <h2>Tuesday</h2>
-          </div>
-          <div className={styles.dayContainer}>
-            {days[2]}
-            <h2>Wednesday</h2>
-          </div>
-          <div className={styles.dayContainer}>
-            {days[3]}
-            <h2>Thursday</h2>
-          </div>
-          <div className={styles.dayContainer}>
-            {days[4]}
-            <h2>Friday</h2>
+            <div className={styles.dayContainer}>
+              {days[0]}
+              <h2>Monday</h2>
+            </div>
+            <div className={styles.dayContainer}>
+              {days[1]}
+              <h2>Tuesday</h2>
+            </div>
+            <div className={styles.dayContainer}>
+              {days[2]}
+              <h2>Wednesday</h2>
+            </div>
+            <div className={styles.dayContainer}>
+              {days[3]}
+              <h2>Thursday</h2>
+            </div>
+            <div className={styles.dayContainer}>
+              {days[4]}
+              <h2>Friday</h2>
+            </div>
           </div>
         </div>
       </div>

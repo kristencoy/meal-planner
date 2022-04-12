@@ -17,15 +17,15 @@ export default function Recipes(props) {
     <>
       <Navbar />
       <div className={styles.main}>
-        <span>
+        <div className={styles.headText}>
           <h1 className={styles.title}>All Recipes</h1>
           <LinkAnchor href="/random" className={styles.altTitle}>
             Roll the Dice
           </LinkAnchor>
           {/* <LinkAnchor href="/">Home</LinkAnchor>
-          <LinkAnchor href="/random">View 5 Day Planner</LinkAnchor>
-          <LinkAnchor href="/add-new-recipe">Add New Recipe</LinkAnchor> */}
-        </span>
+          <LinkAnchor href="/random">View 5 Day Planner</LinkAnchor> */}
+          <LinkAnchor href="/add-new-recipe">Add Your Own Recipe</LinkAnchor>
+        </div>
         <div className={styles.recipeList}>
           <RecipeList recipes={props.recipeData} />
         </div>
@@ -52,7 +52,6 @@ export async function getStaticProps() {
   const { db } = await connectToDatabase();
   let recipeData = await db.collection("recipes").find({}).toArray();
   recipeData = JSON.parse(JSON.stringify(recipeData));
-  console.log(recipeData);
 
   return {
     props: { recipeData },

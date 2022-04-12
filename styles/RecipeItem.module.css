@@ -64,9 +64,14 @@
   max-width: 900px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .grid {
-    width: 100%;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .randContent {
+    padding-top: 5rem;
   }
 }

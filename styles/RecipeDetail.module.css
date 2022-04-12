@@ -22,3 +22,9 @@
   display: inline-block;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 5rem;
+  }
+}
