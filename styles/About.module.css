@@ -1,0 +1,87 @@
+.main {
+    /* height: 100vh;
+    width: 100%; */
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;;
+  }
+  
+  .contentText {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+  }
+  
+  .title {
+    display: inline;
+    /* margin-left: 2rem; */
+  }
+
+  .aboutParas {
+      font-size: 1.2rem;
+      line-height: 2rem;
+  }
+  
+  .altTitle {
+    font-size: 1.5rem;
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .recipeList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+  }
+  
+  .card {
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 3px solid #0564f186;
+    border-radius: 10px;
+    height: 15rem;
+    width: 15rem;
+    font-weight: 200;
+  }
+  
+  .card:hover {
+    color: #0563f1;
+  }
+  
+  .a {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    padding-top: 1rem;
+    align-self: center;
+  }
+  
+  .a:hover {
+    color: #0563f1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .headText {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  
+    .title {
+      margin: none;
+      padding: none;
+    }
+    .a {
+      margin: none;
+      padding: none;
+      align-self: flex-start;
+    }
+  }

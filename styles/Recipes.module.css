@@ -21,12 +21,6 @@
   font-weight: 300;
 }
 
-.recipeList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 5rem;
-}
 
 .card {
   margin: 1rem;
