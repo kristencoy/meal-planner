@@ -1,6 +1,28 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import { FaLaptopCode } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+
+const PortfolioLink = () => {
+  return (
+    <Link href="http://www.kristencoy.com">
+      <a>
+        <FaLaptopCode />
+      </a>
+    </Link>
+  );
+};
+
+const GithubLink = () => {
+  return (
+    <Link href="http://www.github.com/kristencoy">
+      <a>
+        <FaGithub />
+      </a>
+    </Link>
+  );
+};
 
 export default function Home() {
   return (
@@ -25,6 +47,15 @@ export default function Home() {
           at the grocery store
         </p>
         <div className={styles.grid}>
+          <Link href="/about">
+            <a className={styles.card}>
+              <h2>Learn more &rarr;</h2>
+              <p>
+                Why this meal-planner came to be, who it's designed for, and why
+                so much time was spent creating it
+              </p>
+            </a>
+          </Link>
           <Link href="/all-recipes">
             <a className={styles.card}>
               <h2>Get started &rarr;</h2>
@@ -38,9 +69,8 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a href="https://www.kristencoy.com" rel="noopener noreferrer">
-          Created with heavy usage of documentation
-        </a>
+        <PortfolioLink />
+        <GithubLink />
       </footer>
     </div>
   );

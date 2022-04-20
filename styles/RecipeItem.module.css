@@ -38,8 +38,9 @@
 }
 
 .title {
-  margin-left: 3rem;
+  align-self: flex-start;
   display: inline;
+  margin-left: 1rem;
 }
 
 .titleContainer {
@@ -63,15 +64,83 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 85%;
+  padding-bottom: 3rem;
 }
 
 .grid {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 850px;
+}
+
+.randContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+.ingredientsContainer {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.collapseButton {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.25rem;
+  width:fit-content;
+  border: 2px solid #0564f186;
+  margin: 2rem;
+  border-radius: 10px;
+  background-color: #0563f1;
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+.collapseButton:hover {
+  background-color: #0071f39e;
+}
+
+.collapseButton:active {
+  transform: translateY(2px);
+}
+
+.collapseContent{
+  font-size: 1rem;
+  text-decoration: none;
+  border: 3px solid #0564f186;
+  border-radius: 10px;
+  height: auto;
+  width: 60%;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+}
+
+@media only screen and (max-width: 500px){
+  .collapseContent{
+  width: 100%;
+  }
+}
+.openIngred {
+  display: block;
+  transition: all .3s ease-in-out;
+}
+
+.closedIngred {
+  display: none;
+  transition: all .3s ease-in-out;
 }
 
 @media (max-width: 768px) {
